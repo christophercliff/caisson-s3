@@ -1,0 +1,51 @@
+{
+  "name": "caisson-s3",
+  "version": "0.0.0",
+  "author": "Christopher Cliff <ctcliff@gmail.com>",
+  "description": "An AWS S3 plugin for Caisson",
+  "homepage": "http://caisson.co",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/christophercliff/caisson-s3"
+  },
+  "bugs": {
+    "url": "https://github.com/christophercliff/caisson-s3/issues"
+  },
+  "keywords": [
+    "caisson",
+    "aws",
+    "s3"
+  ],
+  "main": "./lib/",
+  "scripts": {
+    "test": "./node_modules/.bin/jshint ./lib/ ./test/ && ./node_modules/.bin/mocha --reporter spec --require should"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.0.0-rc12",
+    "bluebird": "^1.1.1",
+    "own": "^0.0.7",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.4.4",
+    "mocha": "^1.18.2",
+    "should": "^3.2.0"
+  },
+  "jshintConfig": {
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": "nofunc",
+    "newcap": true,
+    "quotmark": "single",
+    "trailing": true,
+    "unused": true,
+    "asi": true,
+    "boss": true,
+    "expr": true,
+    "laxbreak": true,
+    "laxcomma": true,
+    "scripturl": true,
+    "sub": true,
+    "loopfunc": true
+  }
+}
