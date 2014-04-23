@@ -2,34 +2,40 @@
 
 ## An AWS S3 plugin for Caisson
 
-Provisions an AWS S3 bucket and pushes the build directory to it.
+Provisions the necessary AWS S3 buckets and pushes the build directory.
+
+## Installation
+
+```
+$ npm install caisson-s3
+```
 
 ## Usage
-
-Provisioning operations are bundled into plugins and can be mixed and matched as needed. For example, you can provision an S3 bucket and upload your build directory:
 
 ```js
 var caisson = require('caisson').create()
 var s3 = require('caisson-s3')
 
 caisson
-    .use(s3({
-
-    }))
+    .use(s3(options))
     .up()
     .then(caisson.push)
     .done(done)
 ```
 
-## Installation
+### Options
 
-Install with npm:
+- **`awsConfig`** `Object awsConfig`
 
-```
-$ npm install caisson-s3
-```
+    An object containing your AWS configuration, passed along to `s3.config.update(awsConfig)`. Required.
+
+- **`domain`** `String domain`
+
+    The domain used for naming the S3 buckets. Required.
 
 ## Tests
+
+Tests require a file `./test/aws-config.json` with your AWS credentials.
 
 ```
 $ npm test
